@@ -1,0 +1,10 @@
+tn\iit\storeManagement\configurations\SwaggerConfig.class
+tn\iit\storeManagement\MicroServicesStoreManagementProjectApplication.class
+tn\iit\storeManagement\services\MedicationService.class
+tn\iit\storeManagement\DTOs\MedicationDTO.class
+tn\iit\storeManagement\exceptions\ResourceNotFoundException.class
+tn\iit\storeManagement\services\IMedicationService.class
+tn\iit\storeManagement\controllers\medicationController.class
+tn\iit\storeManagement\entities\Medication.class
+tn\iit\storeManagement\mappers\MedicationMapper.class
+tn\iit\storeManagement\repositories\MedicationRepository.class
