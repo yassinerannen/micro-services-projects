@@ -12,7 +12,7 @@ import java.util.Collection;
 @RestController()
 public class PatientController {
 
-	private final PatientService patientService;
+	private PatientService patientService;
 
 	public PatientController(PatientService patientService) {
 		this.patientService = patientService;
@@ -33,7 +33,7 @@ public class PatientController {
 		return this.patientService.save(PatientDTO);
 	}
 
-	@PutMapping
+	@PutMapping("{id}")
 	public PatientDTO update(@RequestBody PatientDTO PatientDTO) {
 		return this.patientService.save(PatientDTO);
 	}

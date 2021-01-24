@@ -1,32 +1,38 @@
 package tn.iit.medicalFile.entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 @Entity
 public class MedicationFile implements Serializable {
 
-private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 1L;
+
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-    private Patient patient;
-    
-    public MedicationFile(Patient patient) {
+
+	private Patient patient;
+
+	@OneToMany(mappedBy = "medicationFile")
+	private Collection<Treatment> treatments;
+
+	public MedicationFile(Patient patient) {
 		super();
 		this.patient = patient;
 	}
-    
-    public MedicationFile() {}
+
+	public MedicationFile() {
+	}
 
 	public MedicationFile(long id, Patient patient) {
 		super();
@@ -82,7 +88,14 @@ private static final long serialVersionUID = 1L;
 	public String toString() {
 		return "MedicationFile [id=" + id + ", patient=" + patient + "]";
 	}
-    
-    
+	
+	public Collection<Treatment> getTreatments() {
+		return treatments;
+	}
+
+	public void setTreatments(Collection<Treatment> treatments) {
+		this.treatments = treatments;
+	}
+
 
 }

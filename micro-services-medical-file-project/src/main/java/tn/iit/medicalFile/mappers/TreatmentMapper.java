@@ -15,6 +15,7 @@ public class TreatmentMapper {
 		TreatmentDTO.setId(treatment.getId());
 		TreatmentDTO.setMedicationId(treatment.getMedicationId());
 		TreatmentDTO.setMedicationFileId(treatment.getMedicationFile().getId());
+		TreatmentDTO.setRespectiveQuantity(treatment.getRespectiveQuantity());
 		return TreatmentDTO;
 	}
 
@@ -23,7 +24,8 @@ public class TreatmentMapper {
 		Treatment.setId(treatmentDTO.getId());
 		Treatment.setMedicationId(treatmentDTO.getMedicationId());
 		Treatment.setMedicationFile(MedicationFileMapper
-				.MedicationFileDTOToMedicationFile(new MedicationFileDTO(treatmentDTO.getMedicationId())));
+				.MedicationFileDTOToMedicationFile(new MedicationFileDTO(treatmentDTO.getMedicationFileId())));
+		Treatment.setRespectiveQuantity(treatmentDTO.getRespectiveQuantity());
 		return Treatment;
 	}
 

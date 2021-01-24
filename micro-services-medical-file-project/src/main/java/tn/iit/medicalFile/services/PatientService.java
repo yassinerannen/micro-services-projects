@@ -14,7 +14,7 @@ import tn.iit.medicalFile.repositories.PatientRepository;
 @Service
 public class PatientService {
 
-	private final PatientRepository patientRepository;
+	private PatientRepository patientRepository;
 
     @Autowired
     public PatientService(PatientRepository patientRepository) {
